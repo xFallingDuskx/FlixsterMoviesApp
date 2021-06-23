@@ -1,6 +1,7 @@
 package com.example.flixstermoviesapp.models.adapters;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,10 +75,26 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         public void bind(Movie movie) {
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
+
+            // Since we want to be able to alternate between images in portrait and landscape mode
+            String imageURL;
+            int placeholder; //todo: is this correct?
+
+            // If phone is in landscape mode
+            if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                imageURL = movie.getBackdropPath();
+                placeholder = R.drawable.poster_placeholder;
+            }
+            // If phone is in portrait mode
+            else {
+                imageURL = movie.getPosterPath();
+                placeholder = R.drawable.backdrop_placeholder;
+            }
+
             Glide.with(context)
-                    .load(movie.getPosterPath())
-                    .placeholder(R.drawable.poster_placeholder)
-                    .error(R.drawable.poster_placeholder)
+                    .load(imageURL)
+                    .placeholder(placeholder)
+                    .error(placeholder)
                     .into(ivPoster);
         }
     }
