@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         RecyclerView rvMovies = findViewById(R.id.rvMovies);
         movies = new ArrayList<>();
 
@@ -56,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONArray results = jsonObject.getJSONArray("results");
                     Log.i(TAG, "Results: " + results.toString());
+
+                    // want to use "addAll" and not "="
+                    // with "=" we are getting a new ArrayList that the adapter doesn't have access to
                     movies.addAll(Movie.fromJsonArray(results));
 
                     // Notify adapter of a change in the data set

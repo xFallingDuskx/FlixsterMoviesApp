@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetailsActivity">
+
+    <TextView
+        android:id="@+id/tvRating3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvOverview"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="314dp"
+        android:layout_marginBottom="0dp"
+        android:text="Watch a video:"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/ivPoster"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="Description:"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:text="Movie Title"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvOverview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDescription"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="0dp"
+        android:text="TextView"
+        android:textSize="14sp" />
+
+    <RatingBar
+        android:id="@+id/rbVoteAverage"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRating"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="61dp"
+        android:numStars="5"
+        android:stepSize="0.5" />
+
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="false"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="0dp"
+        android:text="Rating:"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</RelativeLayout>
