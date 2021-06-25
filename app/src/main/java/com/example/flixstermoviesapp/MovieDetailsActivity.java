@@ -15,6 +15,8 @@ import com.example.flixstermoviesapp.models.Movie;
 
 import org.parceler.Parcels;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 import static com.example.flixstermoviesapp.R.layout.activity_movie_details;
 
 public class MovieDetailsActivity extends AppCompatActivity {
@@ -71,10 +73,13 @@ public class MovieDetailsActivity extends AppCompatActivity {
             placeholder = R.drawable.backdrop_placeholder;
         }
 
+        // todo: issue with lines 81 and 82
         Glide.with(context)
                 .load(imageURL)
                 .placeholder(placeholder)
                 .error(placeholder)
+                .centerCrop() // scale image to fill the entire ImageView
+                .transform(new RoundedCornersTransformation(30, 0))
                 .into(ivPoster);
     }
 }
