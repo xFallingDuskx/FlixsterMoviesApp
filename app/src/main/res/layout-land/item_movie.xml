@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#474444">
 
     <ImageView
         android:id="@+id/ivPoster"
@@ -26,6 +27,7 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_toEndOf="@+id/ivPoster"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         tools:text="The Fast Furious 9" />
 
@@ -39,6 +41,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="7dp"
         android:layout_toEndOf="@+id/ivPoster"
+        android:textColor="#FFFFFF"
         tools:text="Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface." />
 
     <TextView
@@ -53,6 +56,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="0dp"
         android:text="Click to learn more"
+        android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
 </RelativeLayout>
