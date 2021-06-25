@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#474444">
+    android:background="#2B2A2A">
 
     <ImageView
         android:id="@+id/ivPoster"
@@ -14,7 +14,10 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="-2dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         tools:srcCompat="@tools:sample/avatars" />
+    <!--    todo: the 2 lines above help with rounded image corners on glide -->
 
     <TextView
         android:id="@+id/tvTitle"

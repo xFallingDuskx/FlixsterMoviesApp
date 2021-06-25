@@ -23,6 +23,8 @@ import org.parceler.Parcels;
 
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 //  Then you can extend the adapter second, parameterizing it with the appropriate adapter
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
@@ -84,22 +86,30 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             // Since we want to be able to alternate between images in portrait and landscape mode
             String imageURL;
             int placeholder;
+            int radius;
+            int margin;
 
             // If phone is in landscape mode
             if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 imageURL = movie.getBackdropPath();
                 placeholder = R.drawable.poster_placeholder;
+                radius = 140;
+                margin = 40;
             }
             // If phone is in portrait mode
             else {
                 imageURL = movie.getPosterPath();
                 placeholder = R.drawable.backdrop_placeholder;
+                radius = 70;
+                margin = 15;
             }
 
             Glide.with(context)
                     .load(imageURL)
                     .placeholder(placeholder)
                     .error(placeholder)
+                    .centerCrop() // scale image to fill the entire ImageView
+                    .transform(new RoundedCornersTransformation(radius, margin))
                     .into(ivPoster);
         }
 

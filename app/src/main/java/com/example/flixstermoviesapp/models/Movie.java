@@ -1,5 +1,7 @@
 package com.example.flixstermoviesapp.models;
 
+import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,17 +18,20 @@ public class Movie {
     String title;
     String overview;
     Double voteAverage;
+    Integer id;
 
     // no-arguement, empty constructor required for Parceler
     public Movie() {}
 
 //  Rather than applying a try-catch for each of the method calls, just have the constructor throw an exception if there are any issues
+    // Parsing the JSON data being received
     public Movie(JSONObject jsonObject) throws JSONException {
         backdropPath = jsonObject.getString("backdrop_path");
         posterPath = jsonObject.getString("poster_path");
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         voteAverage = jsonObject.getDouble("vote_average");
+        id = jsonObject.getInt("id");
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -36,6 +41,7 @@ public class Movie {
         }
         return movies;
     }
+
 
 //    To test if placeholders are working, 'screw up' the URL for the images below
 
@@ -59,5 +65,9 @@ public class Movie {
 
     public Double getVoteAverage() {
         return voteAverage;
+    }
+
+    public String getId() {
+        return Integer.toString(id);
     }
 }
