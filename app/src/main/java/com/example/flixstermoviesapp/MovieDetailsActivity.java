@@ -107,6 +107,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 .transform(new RoundedCornersTransformation(30, 0))
                 .into(binding.ivVideo);
 
+        // For 'play' button over video
+        Glide.with(this)
+                .load(R.drawable.yt_play_3)
+                .into(binding.ivPlay);
+
         // bind view to ImageView ivVideo in xml document activity_movie_details
         binding.ivVideo.setOnClickListener(new View.OnClickListener() {
             @Override
