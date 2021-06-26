@@ -35,7 +35,7 @@ Here's a walkthrough of implemented user stories:
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+- No scrolling once a movie has been clicked by user to display additional information and video (mainly affects app in landscape mode, as seen in walkthrough)
 
 ## Open-source libraries used
 
@@ -44,7 +44,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2021 Stephon Ricks
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
